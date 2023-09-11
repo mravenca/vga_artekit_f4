@@ -94,7 +94,10 @@ LoopFillZerobss:
   bcc  FillZerobss
 
 /* Call the clock system intitialization function.*/
-  bl  SystemInit   
+/* NOTE: The call to SystemInit has been removed from this .s file.     */
+/* The clock system initialization is now assumed to happen in main(). */
+/*  bl  SystemInit						                               */
+
 /* Call the application's entry point.*/
   bl  main
   bx  lr    

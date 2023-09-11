@@ -1,4 +1,6 @@
-PROJECT_NAME=pwm
+#Makefile for vga_artekit
+
+PROJECT_NAME=vga_artekit
 
 BUILDDIR = build
 
@@ -17,15 +19,20 @@ SOURCES += \
 			$(PERIPH)/src/stm32f4xx_spi.c \
 			$(PERIPH)/src/stm32f4xx_exti.c \
 			$(PERIPH)/src/stm32f4xx_syscfg.c \
-			$(PERIPH)/src/stm32f4xx_tim.c \
 			$(PERIPH)/src/misc.c
 
-SOURCES += startup_stm32f4xx.S
+SOURCES += startup_stm32f4xx.s
 #SOURCES += stm32f4xx_it.c
 SOURCES += system_stm32f4xx.c
 
-SOURCES += \
-		src/STM32F4_motorShield.c \
+SOURCES += main.c
+SOURCES += demo.c
+SOURCES += font5x7.c
+SOURCES += gdi.c
+SOURCES += mth.c
+SOURCES += sys.c
+SOURCES += video.c
+
 
 OBJECTS = $(addprefix $(BUILDDIR)/, $(addsuffix .o, $(basename $(SOURCES))))
 
